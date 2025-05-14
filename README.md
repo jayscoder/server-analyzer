@@ -6,6 +6,9 @@
 <strong>快速收集服务器信息并生成详细报告</strong>
 </div>
 
+GIT 仓库地址：git@github.com:jayscoder/server-analyzer.git
+最新版本：v1.2.0
+
 <p align="center">
   <a href="README.md">中文</a> |
   <a href="README_EN.md">English</a> |
@@ -39,7 +42,7 @@
 ### 直接下载
 
 ```bash
-curl -o server_analyzer.sh https://raw.githubusercontent.com/用户名/server-analyzer/主分支/server_analyzer.sh
+curl -o server_analyzer.sh https://raw.githubusercontent.com/用户名/server-analyzer/main/server_analyzer.sh
 chmod +x server_analyzer.sh
 ```
 

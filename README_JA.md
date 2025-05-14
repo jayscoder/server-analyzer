@@ -39,7 +39,7 @@
 ### 直接ダウンロード
 
 ```bash
-curl -o server_analyzer.sh https://raw.githubusercontent.com/ユーザー名/server-analyzer/メインブランチ/server_analyzer.sh
+curl -o server_analyzer.sh https://raw.githubusercontent.com/ユーザー名/server-analyzer/main/server_analyzer.sh
 chmod +x server_analyzer.sh
 ```
 
