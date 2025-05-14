@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: 服务器分析工具 v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+          files: |
+            server_analyzer.sh
+            README*.md
+          body: |
+            # 服务器分析工具 v${{ env.VERSION }}
+
+            服务器分析工具可以快速收集服务器信息并生成详细报告。
+
+            ## 安装方式
+
+            ```bash
+            curl -o server_analyzer.sh https://raw.githubusercontent.com/${{ github.repository }}/v${{ env.VERSION }}/server_analyzer.sh
+            chmod +x server_analyzer.sh
+            ```
+
+            ## 使用方法
+
+            ```bash
+            ./server_analyzer.sh -h  # 查看帮助信息
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
